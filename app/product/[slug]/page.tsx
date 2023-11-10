@@ -53,15 +53,15 @@ export default async function ProductPage({
 
                             <span className=" text-sm text-gray-500">Incl, Vat plus shipping</span>
                         </div>
-                        
+
                         <div className=" mb-6 flex items-center gap-2 text-gray-500">
-                            <Truck className=" w-6 h-6" /> 
+                            <Truck className=" w-6 h-6" />
                             <span className=" text-sm ">2-4 Day Shipping</span>
                         </div>
 
                         <div className=" flex gap-2.5">
                             <Button>Add To Bag</Button>
-                            <Button variant={"secondary"}>Checkout Now</Button>
+                            <Button className=" bg-red-700 hover:bg-red-500">Checkout Now</Button>
                         </div>
 
                         <div className=" mt-12 text-base text-gray-500 tracking-wide">{data.description}</div>
