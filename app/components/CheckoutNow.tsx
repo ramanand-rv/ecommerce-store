@@ -1,6 +1,7 @@
 'use client'
 import { Button } from '@/components/ui/button';
 import { useShoppingCart } from 'use-shopping-cart';
+import { urlFor } from '../lib/sanity';
 import { CartProduct } from './AddToBag';
 
 export default function CheckoutNow(
@@ -11,22 +12,22 @@ export default function CheckoutNow(
         name,
         price,
         price_id,
+
     }: CartProduct) {
     const { checkoutSingleItem } = useShoppingCart();
+    function buyNow(priceId: string) {
+        checkoutSingleItem(priceId);
+    }
 
     const product = {
         name: name,
         description: description,
         price: price,
         currency: currency,
-        image: image,
+        image: urlFor(image),
         price_id: price_id,
     };
-
-    function buyNow(priceId:string) {
-        checkoutSingleItem(priceId);
-    }
-    return <Button onClick={() => {
+    return <Button className=' border bg-gray-600 text-white hover:bg-gray-600/70 hover:text-white' variant={'outline'} onClick={() => {
         buyNow(product.price_id)
-    }}> Add to Cart </Button>;
+    }}> Checkout Now </Button>;
 }

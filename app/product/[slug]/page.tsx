@@ -1,4 +1,5 @@
 import AddToBag from "@/app/components/AddToBag";
+import CheckoutNow from "@/app/components/CheckoutNow";
 import ImageGallery from "@/app/components/ImageGallery";
 import { client } from "@/app/lib/sanity";
 import { Button } from "@/components/ui/button";
@@ -41,7 +42,7 @@ export default async function ProductPage({
 
                         <div className=" mb-6 flex items-center gap-3 md:mb-10">
                             <Button className=" rounded-full gap-x-3" >
-                                <span className=" text-sm">4.5 </span>
+                                <span className=" text-sm">4.5</span>
                                 <StarIcon className=" h-5 w-5" />
                             </Button>
                             <span className=" text-sm text-gray-500 transition duration-150">76 Ratings</span>
@@ -60,18 +61,25 @@ export default async function ProductPage({
                             <Truck className=" w-6 h-6" />
                             <span className=" text-sm ">2-4 Day Shipping</span>
                         </div>
-                        
+
                         <div className=" flex gap-2.5">
-                            <AddToBag 
+                            <AddToBag
+                                currency="INR"
+                                description={data.description}
+                                image={data.images[0]}
+                                name={data.name}
+                                price={data.price}
+                                key={data._id}
+                                price_id={data.price_id}
+                            />
+                            <CheckoutNow 
                             currency="INR"
                             description={data.description}
-                            image={data.images[0]}
+                            image={data.images}
                             name={data.name}
                             price={data.price}
-                            key={data._id}
                             price_id={data.price_id}
-                             />
-                            <Button className=" bg-red-700 hover:bg-red-500" >Checkout Now</Button>
+                            />
                         </div>
 
                         <div className=" mt-12 text-base text-gray-500 tracking-wide">{data.description}</div>
