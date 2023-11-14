@@ -14,6 +14,7 @@ async function getData(slug: string) {
             description,
             "slug": slug.current,
             "categoryName": category->name,
+            price_id,
         }`;
     const data = await client.fetch(query);
     return data;
@@ -68,6 +69,7 @@ export default async function ProductPage({
                             name={data.name}
                             price={data.price}
                             key={data._id}
+                            price_id={data.price_id}
                              />
                             <Button className=" bg-red-700 hover:bg-red-500">Checkout Now</Button>
                         </div>
