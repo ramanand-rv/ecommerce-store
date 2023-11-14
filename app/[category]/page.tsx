@@ -54,7 +54,6 @@ export default async function CategoryPage({ params, }:
                             </div>
                             <p className=' mt-1 text-sm text-gray-500'>
                                 {product.categoryName}
-                                {product.imageUrl}
                             </p>
                             
 
