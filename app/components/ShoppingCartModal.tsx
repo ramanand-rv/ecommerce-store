@@ -5,11 +5,12 @@ import {
     SheetHeader,
     SheetTitle,
 } from "@/components/ui/sheet";
-import { useShoppingCart, formatCurrencyString } from 'use-shopping-cart'
+import Image from "next/image";
+import { useShoppingCart } from 'use-shopping-cart'
 
 
 export default function ShoppingCartModal() {
-    const {cartCount, shouldDisplayCart, handleCartClick} = useShoppingCart();
+    const {cartCount, shouldDisplayCart, handleCartClick, cartDetails} = useShoppingCart();
     return (
         <Sheet open = {shouldDisplayCart} onOpenChange={()=> handleCartClick()}>
             <SheetContent className=" sm:max-w-lg w=[99vw]">
@@ -24,7 +25,29 @@ export default function ShoppingCartModal() {
                             {cartCount === 0 ? (
                                 <h1 className="py-6"> Your cart is empty</h1>
                             ): (
-                                <h1>Items hai yaar</h1>
+                                <>
+                                    {Object.values(cartDetails ?? {}).map((entry)=>(
+                                        <li key={entry.id} className=" flex py-6">
+                                            <div className=" py-6 h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-x-gray-200">
+                                                <Image src={entry.image as string}
+                                                alt="Product image"
+                                                height={100}
+                                                width={100}
+                                                />
+                                            </div>
+
+                                            <div className=" ml-4 flex flex-1 flex-col">
+                                                <div>
+                                                    <div className="flex justify-between text-base font-medium text-gray-900">
+                                                        <h3>{entry.name}</h3>
+                                                        <p>{entry.price}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </li>
+                                    ))}
+                                </>
                             )}
 
                         </ul>

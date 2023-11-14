@@ -1,3 +1,4 @@
+import AddToBag from "@/app/components/AddToBag";
 import ImageGallery from "@/app/components/ImageGallery";
 import { client } from "@/app/lib/sanity";
 import { Button } from "@/components/ui/button";
@@ -60,7 +61,14 @@ export default async function ProductPage({
                         </div>
 
                         <div className=" flex gap-2.5">
-                            <Button>Add To Bag</Button>
+                            <AddToBag 
+                            currency="INR"
+                            description={data.description}
+                            image={data.images}
+                            name={data.name}
+                            price={data.price}
+                            key={data._id}
+                             />
                             <Button className=" bg-red-700 hover:bg-red-500">Checkout Now</Button>
                         </div>
 
