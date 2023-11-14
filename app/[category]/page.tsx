@@ -7,7 +7,7 @@ import product from "@/sanity/schemas/product";
 async function getData(category: string) {
     const query = `*[_type=='product' && category->name== "${category}" ]{      
             __id,
-            "imgUrl": images[0].asset->url,
+            "imageUrl": images[0].asset->url,
             price,
             name, 
             "slug": slug.current,
@@ -33,7 +33,7 @@ export default async function CategoryPage({ params, }:
                             <div className=" aspect-square w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-80 ">
                                 <Link href={`/product/${product.slug}`}>
                                     <Image
-                                        src={product.imgUrl}
+                                        src={product.imageUrl}
                                         alt='Product image'
                                         className=' w-full h-full object-cover object-center lg:h-full lg:w-full'
                                         width={300}
