@@ -7,7 +7,7 @@ import {
     SheetTitle,
 } from "@/components/ui/sheet";
 import Image from "next/image";
-import { useShoppingCart } from 'use-shopping-cart'
+import { useShoppingCart } from 'use-shopping-cart';
 
 
 export default function ShoppingCartModal() {

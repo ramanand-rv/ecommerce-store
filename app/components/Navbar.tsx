@@ -1,10 +1,9 @@
 'use client'
 import { Button } from '@/components/ui/button';
 import { ShoppingBag } from 'lucide-react';
-import Link from 'next/link'
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React from 'react'
-import {useShoppingCart} from 'use-shopping-cart';
+import { useShoppingCart } from 'use-shopping-cart';
 
 const links = [
     { name: 'Home', href: '/' },

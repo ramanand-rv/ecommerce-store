@@ -1,8 +1,7 @@
 import { simplifiedProduct } from "@/interface";
-import { client } from "../lib/sanity";
-import Link from "next/link";
 import Image from "next/image";
-import product from "@/sanity/schemas/product";
+import Link from "next/link";
+import { client } from "../lib/sanity";
 
 async function getData(category: string) {
     const query = `*[_type=='product' && category->name== "${category}" ]{      
@@ -41,7 +40,7 @@ export default async function CategoryPage({ params, }:
                                         className=' w-full h-full object-cover object-center lg:h-full lg:w-full'
                                         width={300}
                                         height={300}
-                                    />                                
+                                    />
                                 </Link>
 
                             </div>
@@ -58,7 +57,7 @@ export default async function CategoryPage({ params, }:
                             <p className=' mt-1 text-sm text-gray-500'>
                                 {product.categoryName}
                             </p>
-                            
+
 
                         </div>
 

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { LucideShieldClose, SquareDashedBottomCodeIcon } from "lucide-react";
+import { LucideShieldClose } from "lucide-react";
 import Link from "next/link";
 
 export default function ErrorStripe() {

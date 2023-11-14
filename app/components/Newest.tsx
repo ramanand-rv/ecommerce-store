@@ -1,9 +1,8 @@
-import React from 'react'
-import { client } from '../lib/sanity';
 import { simplifiedProduct } from '@/interface';
-import Link, {LinkProps} from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import Image, {ImageProps} from "next/image";
+import Image from "next/image";
+import Link from 'next/link';
+import { client } from '../lib/sanity';
 
 
 async function getData() {

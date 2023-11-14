@@ -4,7 +4,7 @@ import ImageGallery from "@/app/components/ImageGallery";
 import { client } from "@/app/lib/sanity";
 import { Button } from "@/components/ui/button";
 import { fullProduct } from "@/interface";
-import { StarIcon, Truck, TruckIcon } from "lucide-react";
+import { StarIcon, Truck } from "lucide-react";
 
 async function getData(slug: string) {
     const query = `*[_type=='product' && slug.current=='${slug}'][0]{

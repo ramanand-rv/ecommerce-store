@@ -1,6 +1,6 @@
 import { simplifiedProduct } from "@/interface";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { client } from "../lib/sanity";
 
 async function getData(category: string) {
