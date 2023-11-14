@@ -42,7 +42,7 @@ export default async function ProductPage({
 
                         <div className=" mb-6 flex items-center gap-3 md:mb-10">
                             <Button className=" rounded-full gap-x-3" >
-                                <span className=" text-sm">4.5</span>
+                                <span className=" text-sm">{(Math.random() * (5 - 3) + 3).toFixed(1)} </span>
                                 <StarIcon className=" h-5 w-5" />
                             </Button>
                             <span className=" text-sm text-gray-500 transition duration-150">76 Ratings</span>
