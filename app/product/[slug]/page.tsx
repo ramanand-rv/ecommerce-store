@@ -60,18 +60,18 @@ export default async function ProductPage({
                             <Truck className=" w-6 h-6" />
                             <span className=" text-sm ">2-4 Day Shipping</span>
                         </div>
-
+                        
                         <div className=" flex gap-2.5">
                             <AddToBag 
                             currency="INR"
                             description={data.description}
-                            image={data.images}
+                            image={data.images[0]}
                             name={data.name}
                             price={data.price}
                             key={data._id}
                             price_id={data.price_id}
                              />
-                            <Button className=" bg-red-700 hover:bg-red-500">Checkout Now</Button>
+                            <Button className=" bg-red-700 hover:bg-red-500" >Checkout Now</Button>
                         </div>
 
                         <div className=" mt-12 text-base text-gray-500 tracking-wide">{data.description}</div>
